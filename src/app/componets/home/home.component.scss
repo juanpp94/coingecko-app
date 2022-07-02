@@ -1,0 +1,20 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+
+}
+
+main .title {
+    align-self: flex-start;
+    font-size: 6rem;
+}
+
+main .enter-button {
+    border-radius: 25px;
+    width: 200px;
+}
+
