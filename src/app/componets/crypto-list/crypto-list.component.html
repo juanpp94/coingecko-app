@@ -1,9 +1,11 @@
-<div *ngFor="let crypto of allCryptos" class="card">
-    <article class="card-body" [routerLink]="['/cryptos',crypto.id]">
-        <h3>NAME: {{crypto.name}}</h3>
-        <p>ID: {{crypto.id}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </article>
+<h1>Available coins</h1>
+<div class="container">
+    <div *ngFor="let crypto of allCryptos" class="card">
+        <article class="card-body" [routerLink]="['/cryptos',crypto.id]">
+            <h3 [routerLink]="['/cryptos',crypto.id]">{{crypto.name}}</h3>
+            <p> {{crypto.id}}</p>
+        </article>
+    </div>
 </div>
 
 

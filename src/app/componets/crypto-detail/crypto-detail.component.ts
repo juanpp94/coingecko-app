@@ -41,11 +41,11 @@ export class CryptoDetailComponent implements OnInit {
       console.log("price:",this.crypto.price)
       this.crypto.rank = response['coingecko_rank'];
       this.crypto.score = response['coingecko_score'];
-      this.crypto.description = response['description'];
+      this.crypto.description = response['description']['en'];
       this.crypto.img = response['image']['small'];
       this.crypto.coinLink1 = response['links']['homepage'];
       this.crypto.coinLink2 = response['links']['blockchain_site'];
-      this.crypto.coinPlatform = response['platforms']
+      this.crypto.coinPlatform = response['platforms'][''];
       console.log("platform:",this.crypto.coinPlatform);
 
     

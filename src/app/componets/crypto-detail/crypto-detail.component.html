@@ -1,15 +1,40 @@
 <div  class="card">
     <article class="card-body">
-        <h3>NAME: {{crypto.name}}</h3>
-        <p>ID: {{crypto.id}}</p>
-        <p>PRICE: {{crypto.price}}</p>
-        <p>RANK: {{crypto.rank}}</p>
-        <p>SCORE: {{crypto.score}}</p>
-        <p>DESCRIPTION: {{crypto.description}}</p>
-        <img [src]=crypto.img/>
-        <p>LINK1 {{crypto.coinLink1}}</p>
-        <p>LINK2 {{crypto.coinLink2}}</p>
-        <p>PLATFORM: {{crypto.coinPlatform}}</p>
+        <section class="basic-data">
+            <div class="basic-data-1">
+                <div class="crypto-name">
+                   <img  [routerLink]="['/cryptos']" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAZlBMVEX///89bes1aet/m/H6/P/Y4PooYuorZOo6a+skYOoxZurd5Pvf5vstZerb4vsgX+rv8/1BcOumuPVQeu3n7Pxuj+/P2PmXrfNjh+5qjO++y/eNpPLj6fz3+f6ywvZGdOyFn/G1xPZZBxPoAAACMUlEQVR4nO3b3W6bMACGYWwWMA6kWRKyn67tdv83ubpVpbbBgCqQ5Y/3Oc6BXzngYOKiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALJ02bXH1GNY0bX3VdXU33+IRh5/NtaZwNen1INZQ9tZ88ZVv1IPZ3mtd+adrkw9oKW1lfmo+Z16SMtqvfnMph7Totra3RRWSpO497eBxgpdiftuINC4c+pxLWZfD/QF31KPbCHt0Fc0zKEVKTx8XibUCg9dJFCl8HAXCxQpjM+gSGH0GlQp3MWWCZXCw2igQOH4DAoUTsxg/oWjNxmFwqmvaPaFu/hCr1E4YwbzLtxNXoMvhS71OL9s1gwGZS7uT9cPgbNmMLDZ8JU9fSEwL/X58hoY3bLInvV/QuCDHd6yUOBcuPmXtzu/Ovx9UVya1KNYVXUsTspTaEz3WPS6V2Fgy+JJu9Cci9QjWJ36HLqz+nXoevV7qX/cwHpYlHb6c9nyf8Pv0sirNAXOPoSf3tN7bLlyr88WG3g+3MAz/gb2aZ4TZ60ZGe+1bWC/dAN73ht4bzHnjpp74XRi9oWTifkXTiUKFE4kKhSOJ0oUji4aGoVjS79I4cgsqhTGr0WZwmiiTmF8FmUKI4lC/9WPJCqdtxhOlDozM7hoaJ17GvhLe/Mv9ZCWtlc/fxjOzrx7p1H1qYezhmN/93YOuJI8B/zsWlrps9wvxM/jAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACn8B4cFJyOad8pIAAAAAElFTkSuQmCC" alt="left arrow">
+                    <h4 class="card-title">{{crypto.name}}</h4>
+                </div>
+                
+                <h6 class="card-subtitle mb-2 text-muted" id="crypto-id">ID: {{crypto.id}}</h6>
+            </div>
+            <div class="basic-data-image">
+                <img  [src]=crypto.img/>
+            </div>
+        </section>
+        <section class="more-information">
+            <div class="usd-price">
+                <p class="card-text">PRICE: {{ crypto.price | currency:'USD':true:'1.0-9' }}</p>
+            </div>
+            <div class="popularity">
+                <p class="card-text">RANK: {{crypto.rank}}</p>
+                <p class="card-text">SCORE: {{crypto.score}}</p>
+            </div>
+            <div class="description">
+                <p class="card-link" class="card-text">{{crypto.description}}</p>
+            </div>
+            <div class="references">
+                <p class="card-text">more info</p>
+                <a [href]=crypto.coinLink1>Homepage</a>
+                <a [href]=crypto.coinLink2>Blockchain Site</a>
+            </div>
+            <hr>
+            <div class="coin-platform">
+                <a class="card-link" [href]=crypto.coinPlatform>Platform</a>
+            </div>
+        </section>
+        
     </article>
 </div>
 
