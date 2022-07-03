@@ -23,11 +23,8 @@ export class CryptoListComponent implements OnInit {
       this.allCryptos = response;
       console.log("Todas las criptos:",this.allCryptos)
       console.log("Esto esta en la posicion cero: ",this.allCryptos[0])
-      /*this.primeraCrypto.id = this.allCryptos[0].id;
-      this.primeraCrypto.name = this.allCryptos[0].name;*/
     }, err => {
-      alert("ERRROR")
-      //console.log("Error de conexión")
+      alert("Connection error");
     })
   }
 
